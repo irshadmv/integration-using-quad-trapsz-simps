@@ -1,0 +1,11 @@
+from scipy.integrate import trapz,simps,quad
+
+def f(x):
+  return 4*x**2+3
+res,err=quad(f,-2,2)
+x=np.arange(-2,2,0.01)    # in trapz and simps method arange is needed
+res1=trapz(f(x),x)
+res2=simps(f(x),x)
+print('the general value is {:f}(+-{:g}'.format(res,err))
+print('the traps result is {:f}'.format(res1))
+print('the simps result is {:f}'.format(res2))
